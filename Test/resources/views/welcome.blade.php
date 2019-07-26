@@ -81,7 +81,12 @@
                 <div class="title m-b-md">
                     Big Booty Bitches
                 </div>
-                <h3><a href="/contact">Holla at some bitches</a></h3>
+                <ul>
+                    <li><a href="/contact">Holla at some bitches</a></li>
+                    <li><a href="/about">All about bitches</a></li>
+                </ul>
+                
+
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>

@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>This page is about Big Booty Bitches</p>
+
+        <ul>
+            <li><a href="/">The bitches crib</a></li>
+            <li><a href="/contact">Holla at some bitches</a></li>
+        </ul>
 </body>
 </html>
