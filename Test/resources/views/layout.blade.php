@@ -7,6 +7,11 @@
     <title>welcome</title>
 </head>
 <body>
+    <ul>
+        <li><a href="/">The bitches crib</a></li>
+        <li><a href="/contact">Holla at some bitches</a></li>
+        <li><a href="/about">All about the bitches</a></li>
+    </ul>
    @yield('content')
 </body>
 </html>
