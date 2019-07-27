@@ -5,7 +5,7 @@
 
 @section('content')
 <h3>Big Booty Bitches</h3>
-<p>{!! $alert !!}</p>
+{{-- <p>{!! $alert !!}</p> --}}
 
 <ul>
     {{-- Blade Syntax. Gets compiled down to php--}}

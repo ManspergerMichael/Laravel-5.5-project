@@ -11,6 +11,13 @@
 |
 */
 
+//Controllers
+Route::get('/', 'PagesController@home');
+Route::get('/about', 'PagesController@about');
+Route::get('/contact', 'PagesController@contact');
+
+/* 
+Routing without a controlleer
 Route::get('/', function () {
     $tasks = [
         'Meet Big Booty Bitches',
@@ -29,7 +36,7 @@ Route::get('/', function () {
     //alternitive return
 
     //return view('welcome')=>withTasks($tasks)=>withFoo('foo');
-});
+}); */
 
 /* 
 Route::get('/', function () {
@@ -40,13 +47,5 @@ Route::get('/', function () {
 });
  */
 
-Route::get('/about', function () {
-    return view('about');
-});
 
-
-
-Route::get('/contact', function () {
-    return view('contact');
-});
 
