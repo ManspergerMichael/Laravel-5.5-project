@@ -20,7 +20,11 @@ Route::get('/', function () {
     return view('welcome', [
         //This line creates a tasks variable and passes the $tasks array into it. 
         //The view will have access to the 'tasks' data
-        'tasks' => $tasks
+        'tasks' => $tasks,
+        'foo' => 'foobar',
+        'alert' => '<script>alert("foobar")</script>'
+
+        //SQL querys will go here
     ]);
 });
 
