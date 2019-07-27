@@ -22,11 +22,23 @@ Route::get('/', function () {
         //The view will have access to the 'tasks' data
         'tasks' => $tasks,
         'foo' => 'foobar',
-        'alert' => '<script>alert("foobar")</script>'
+        //'alert' => '<script>alert("foobar")</script>'
 
         //SQL querys will go here
     ]);
+    //alternitive return
+
+    //return view('welcome')=>withTasks($tasks)=>withFoo('foo');
 });
+
+/* 
+Route::get('/', function () {
+    return view('home')=>with([
+        'foo' => 'bar',
+        'tasks => ['some task', 'another task']
+    ])
+});
+ */
 
 Route::get('/about', function () {
     return view('about');
