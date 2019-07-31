@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/', "PetStoreController@index");
+Route::get('/', "PetStore@index");
+Route::get('/edit', "PetStore@edit");
+Route::get('/create',"PetStore@create");
+
