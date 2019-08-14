@@ -12,7 +12,8 @@
 */
 
 
-Route::get('/', "PetStore@index");
+Route::get('/', "PetStore@LogAndReg");
+Route::get('/index', "PetStore@index");
 Route::get('/edit', "PetStore@edit");
 Route::get('/create',"PetStore@create");
 
