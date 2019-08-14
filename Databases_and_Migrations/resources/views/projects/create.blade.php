@@ -9,5 +9,17 @@
 <body>
     <h1>Create A new Project</h1>
 
+    <form>
+        <div>
+            <input type="text" name="projectName" placeholder="Project Name">
+        </div>
+        <div>
+            <textarea name="description" placeholder="Project Description"></textarea>
+        </div>
+        <div>
+            <button type="submit">Create Project</button>
+        </div>
+    </form>
+
 </body>
 </html>
