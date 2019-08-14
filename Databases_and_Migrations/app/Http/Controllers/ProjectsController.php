@@ -17,4 +17,8 @@ class ProjectsController extends Controller
         //return $projects;
         return view('projects.index',['projects' => $projects]);
     }
+
+    public function create(){
+        return view('projects.create');
+    }
 }

@@ -7,11 +7,7 @@
     <title>Projects</title>
 </head>
 <body>
-    <h1>World domination projects</h1>
-        <ul>
-        @foreach ($projects as $project)
-            <li>{{ $project->title}}</li>
-        @endforeach
-        </ul>
+    <h1>Create A new Project</h1>
+
 </body>
 </html>
