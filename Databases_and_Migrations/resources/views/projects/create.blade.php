@@ -9,7 +9,7 @@
 <body>
     <h1>Create A new Project</h1>
 
-    <form>
+    <form method="POST">
         <div>
             <input type="text" name="projectName" placeholder="Project Name">
         </div>
