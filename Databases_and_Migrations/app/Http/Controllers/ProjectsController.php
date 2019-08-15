@@ -21,4 +21,8 @@ class ProjectsController extends Controller
     public function create(){
         return view('projects.create');
     }
+
+    public function store(){
+        return request()->all();
+    }
 }
