@@ -12,7 +12,7 @@
     <form method="POST" action="/projects">
         {{ csrf_field() }}
         <div>
-            <input type="text" name="projectName" placeholder="Project Name">
+            <input type="text" name="title" placeholder="Project Name">
         </div>
         <div>
             <textarea name="description" placeholder="Project Description"></textarea>
