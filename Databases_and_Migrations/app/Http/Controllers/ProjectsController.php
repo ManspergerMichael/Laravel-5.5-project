@@ -29,4 +29,22 @@ class ProjectsController extends Controller
         $project->save();
         return redirect('/projects');
     }
+
+    public function show()
+    {
+
+    }
+    public function edit($id)
+    {
+        $project = Project::find($id);
+        return view('projects.edit', compact('project'));
+    }
+    public function update()
+    {
+
+    }
+    public function destroy()
+    {
+
+    }
 }
