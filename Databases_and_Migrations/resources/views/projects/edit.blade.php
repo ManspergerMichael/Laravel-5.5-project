@@ -7,8 +7,10 @@
     <h1>Edit Project</h1>
 
     <form action="/projects/{{$project->id}}" method="POST">
-        {{ method_field('PATCH') }}
-        {{csrf_field()}}
+        <!--blade snippits b: -->
+        @method('PATCH')
+        @csrf
+
         <div class="form-group">
             <label class="label" for="title">Title</label>
             <input type="text" class="form-control" name=title placeholder="Title" value="{{$project->title}}">
@@ -24,8 +26,10 @@
 
     </form>
     <form action="/projects/{{$project->id}}" method="POST">
-        {{ method_field('DELETE')}}
-        {{ csrf_field() }}
+
+        @method('DELETE')
+        @csrf
+
         <div class="form-group">
             <button class="btn btn-danger" type="submit">Delete Project</button>
         </div>
