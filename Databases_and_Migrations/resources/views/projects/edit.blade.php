@@ -23,4 +23,11 @@
 
 
     </form>
+    <form action="/projects/{{$project->id}}" method="POST">
+        {{ method_field('DELETE')}}
+        {{ csrf_field() }}
+        <div class="form-group">
+            <button class="btn btn-danger" type="submit">Delete Project</button>
+        </div>
+    </form>
 @endsection
