@@ -10,13 +10,23 @@ class PetStore extends Controller
     //
     
     public function create(){
-        return view ('Pets.create');
+        return view('Pets.create');
     }
     public function edit($id){
-        return view ('Pets.edit');
+        $pet = pets::findOrFail($id);
+        return view('Pets.edit', compact('pet'));
     }
     public function show($id){
-        return view ('Pets.show');
+        return view('Pets.show');
+    }
+    public function store(){
+        $pet = new pets();
+        $pet->Pet_Name = request('Pet_Name');
+        $pet->Type = request('type');
+        $pet->Age = request('age');
+        $pet->Price = request('price');
+        $pet->save();
+        return redirect('/Pets');
     }
     public function update($id){
         return redirect('Pets.index');
@@ -26,20 +36,7 @@ class PetStore extends Controller
     }
     public function index(){
         $pets = pets::all();
-        return view ('Pets.index', ['pets' => $pets]);
+        return view ('Pets.index', compact('pets'));
     }
 }
 
-Route::get('/projects', 'ProjectsController@index');
-
-Route::get('/projects/create', 'ProjectsController@create');
-
-Route::get('/projects/{project}', 'ProjectsController@show');
-
-Route::post('/projects', 'ProjectsController@store');
-
-Route::get('/projects/{project}/edit', 'ProjectsController@edit');
-
-Route::patch('/projects/{project}', 'ProjectsController@update');
-
-Route::delete('/projects/{project}', 'ProjectsController@destroy');

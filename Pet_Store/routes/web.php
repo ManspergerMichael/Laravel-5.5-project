@@ -16,13 +16,13 @@
 Route::get('/index', "PetStore@index");
 Route::get('/edit', "PetStore@edit");
 Route::get('/create',"PetStore@create"); */
-Route::resource('pets', 'PetStore');
+Route::resource('Pets', 'PetStore');
 
 /*
 --Format of restful routing created with the resource helper
 
 
-Route::get('/projects', 'ProjectsController@index');
+Route::get('/Pets', 'PetStore@index');
 
 Route::get('/projects/create', 'ProjectsController@create');
 

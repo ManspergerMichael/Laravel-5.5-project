@@ -33,7 +33,7 @@ class ProjectsController extends Controller
     public function show($id)
     {
         $project = Project::findOrFail($id);
-        return view('Projects.show');
+        return view('Projects.show', compact('project'));
     }
     public function edit($id)
     {
