@@ -30,9 +30,10 @@ class ProjectsController extends Controller
         return redirect('/projects');
     }
 
-    public function show()
+    public function show($id)
     {
-
+        $project = Project::findOrFail($id);
+        return view('Projects.show');
     }
     public function edit($id)
     {
