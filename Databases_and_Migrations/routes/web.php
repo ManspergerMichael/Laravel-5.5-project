@@ -13,7 +13,7 @@ GET (RETREVE)
 
 POST (CREATE)
 
-PUT
+PUT not convention same as PATCH
 
 PATCH (UPDATE)
 

@@ -17,7 +17,8 @@ class PetStore extends Controller
         return view('Pets.edit', compact('pet'));
     }
     public function show($id){
-        return view('Pets.show');
+        $pet = pets::findOrFail($id);
+        return view('Pets.show', compact('pet'));
     }
     public function store(){
         $pet = new pets();
@@ -29,6 +30,12 @@ class PetStore extends Controller
         return redirect('/Pets');
     }
     public function update($id){
+        $pet = pets::findOrFail($id);
+        $pet->Pet_Name = request('Pet_Name');
+        $pet->Type = request('type');
+        $pet->Age = request('age');
+        $pet->Price = request('price');
+        $pet->save();
         return redirect('Pets.index');
     }
     public function destroy($id){
