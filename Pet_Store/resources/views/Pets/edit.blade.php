@@ -7,8 +7,8 @@
 
 <form action="/Pets/{{$pet->id}}" method="POST">
 
-    @method('PATCH')
-    @csrf
+    {{ csrf_field() }}
+    {{ method_field('PATCH') }}
     
     <div class="form-group">
         <label class="label" for="Pet_Name">Name</label>
@@ -35,8 +35,8 @@
 
 <form action="/Pets/{{$pet->id}}" method="POST">
 
-    @method('DELETE')
-    @csrf
+    {{ csrf_field() }}
+    {{ method_field('DELETE') }}
     
     <button class="btn btn-danger" type="submit">Pet Adopted</button>
 </form>

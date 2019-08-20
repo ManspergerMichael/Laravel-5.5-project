@@ -36,14 +36,15 @@ class PetStore extends Controller
         $pet->Age = request('age');
         $pet->Price = request('price');
         $pet->save();
-        return redirect('Pets.index');
+        return redirect('/Pets');
     }
     public function destroy($id){
-        return redirect ('Pets.index');
+        $pet = pets::findOrFail($id)->delete();
+        return redirect ('/Pets');
     }
     public function index(){
         $pets = pets::all();
-        return view ('Pets.index', compact('pets'));
+        return view ('/Pets.index', compact('pets'));
     }
 }
 
