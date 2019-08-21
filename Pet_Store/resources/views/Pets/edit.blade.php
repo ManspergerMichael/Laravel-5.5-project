@@ -40,6 +40,7 @@
     
     <button class="btn btn-danger" type="submit">Pet Adopted</button>
 </form>
+<button><a href="/Pets">Cancel</a></button>
 
 
 @endsection

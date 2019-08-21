@@ -9,4 +9,5 @@
     <p>Retail Price: ${{$pet->Price}}, OBA</p>
     <p>Will be euthinized in 3 days. Buy now!!!</p>
     
+    <button><a href="/Pets">Home</a></button>
 @endsection
