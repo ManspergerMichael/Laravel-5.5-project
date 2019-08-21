@@ -5,6 +5,8 @@
 
 @section('content')
 <h1>A cute little {{$pet->Type}}</h1>
-    <p>Her name is {{$pet->Pet_Name}} and she is {{$pet->Age}} years old.<p>
+    <p>Its name is {{$pet->Pet_Name}} and is {{$pet->Age}} years old.</p>
+    <p>Retail Price: ${{$pet->Price}}, OBA</p>
+    <p>Will be euthinized in 3 days. Buy now!!!</p>
     
 @endsection
