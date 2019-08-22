@@ -11,11 +11,11 @@
 
         <div class="form-group">
             <label class="label" for="title">Title</label>
-            <input class="form-control{{ $errors->has('title') ? 'has-error' : '' }}" type="text" name="title">
+            <input class="form-control" type="text" name="title" value="{{old('title')}}">
         </div>
         <div class="form-group" >
             <label class="label" for="description">Description</label>
-            <textarea class="form-control" name="description" ></textarea>
+            <textarea class="form-control" name="description">{{old('description')}}</textarea>
         </div>
         <div>
             <button type="submit">Create Project</button>
