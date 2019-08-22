@@ -50,9 +50,11 @@ class ProjectsController extends Controller
     public function update(Project $project)
     {
         //$project = Project::findOrFail($id);
-        $project->title = request('title');
+        $project->update(request(['title','description']));
+
+        /* $project->title = request('title');
         $project->description = request('description');
-        $project->save();
+        $project->save(); */
         return redirect('/projects');
     }
     public function destroy(Project $project)
