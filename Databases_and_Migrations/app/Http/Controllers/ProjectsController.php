@@ -23,34 +23,41 @@ class ProjectsController extends Controller
     }
 
     public function store(){
-        $project = new Project();
+
+        Project::create([
+            'title' => request('title'),
+            'description' => request('description')
+        ]);
+
+        /* $project = new Project();
         $project->title = request('title');
         $project->description = request('description');
-        $project->save();
+        $project->save(); */
+
         return redirect('/projects');
     }
 
-    public function show($id)
+    public function show(Project $project) //route model binding
     {
-        $project = Project::findOrFail($id);
+        //project = Project::findOrFail($id);
         return view('Projects.show', compact('project'));
     }
-    public function edit($id)
+    public function edit(Project $project)
     {
-        $project = Project::findOrFail($id);
+        //$project = Project::findOrFail($id); no longer needed with route model binding
         return view('projects.edit', compact('project'));
     }
-    public function update($id)
+    public function update(Project $project)
     {
-        $project = Project::findOrFail($id);
+        //$project = Project::findOrFail($id);
         $project->title = request('title');
         $project->description = request('description');
         $project->save();
         return redirect('/projects');
     }
-    public function destroy($id)
+    public function destroy(Project $project)
     {
-        Project::findOrFail($id)->delete();
+        $project->delete();
         return redirect('/projects');
     }
 }

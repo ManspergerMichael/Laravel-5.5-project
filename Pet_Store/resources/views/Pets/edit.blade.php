@@ -7,8 +7,10 @@
 
 <form action="/Pets/{{$pet->id}}" method="POST">
 
-    {{ csrf_field() }}
-    {{ method_field('PATCH') }}
+    {{-- {{ csrf_field() }}
+    {{ method_field('PATCH') }} --}}
+    @method('PATCH')
+    @csrf
     
     <div class="form-group">
         <label class="label" for="Pet_Name">Name</label>
@@ -34,9 +36,11 @@
 
 
 <form action="/Pets/{{$pet->id}}" method="POST">
+    @method('DELETE')
+    @csrf
 
-    {{ csrf_field() }}
-    {{ method_field('DELETE') }}
+    {{-- {{ csrf_field() }}
+    {{ method_field('DELETE') }} --}}
     
     <button class="btn btn-danger" type="submit">Pet Adopted</button>
 </form>

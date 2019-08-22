@@ -18,7 +18,7 @@
             <td>{{$pet -> Type}}</td>
             <td>{{$pet -> Age}}</td>
             <td>{{$pet -> Price}}</td>
-            <td><button><a href="/Pets/{{$pet->id}}">Show</a></button> <button><a href="/Pets/{{$pet->id}}/edit">Edit</a></button></td>
+            <td class="col-sm-2"><button><a href="/Pets/{{$pet->id}}">Show</a></button> <button><a href="/Pets/{{$pet->id}}/edit">Edit</a></button></td>
         </tr>
         
     @endforeach
