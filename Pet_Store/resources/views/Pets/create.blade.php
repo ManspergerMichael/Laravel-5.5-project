@@ -6,7 +6,7 @@
 <h1>Create A new Pet</h1>
 <div>
     <form action="/Pets" method="POST">
-        {{ csrf_field() }}
+        @csrf 
         <div class="form-group">
             <label class="label" for="Pet_Name">Name</label>
             <input type="text" class="form-control" name=Pet_Name placeholder="Pet Name">
