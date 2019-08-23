@@ -26,6 +26,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::patch('/tasks/{task}','ProjectTasksController@update');
+
 //this creates RESTful routes in the format listed below
 Route::resource('projects', 'ProjectsController');
 
