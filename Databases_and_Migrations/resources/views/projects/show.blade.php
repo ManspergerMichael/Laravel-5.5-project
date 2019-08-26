@@ -33,16 +33,19 @@
         </ul>
     </div>
 @endif
-<form>
+<form method="POST" action="/projects/{{$project->id}}/tasks">
+    @csrf
+
     <div class="form-group">
     <label for="description">New Task</label>
     <input type="text" class="form-control" name="description" id=""  placeholder="">
-
     </div>
+    <button type="submit" class="btn btn-primary">Add Task</button>
 </form>
 
 <div>
-    <button class="btn"><a href="/projects/{{$project->id}}/edit">Edit Project</a></button>
+    <a name="" id="" class="btn btn-primary" href="/projects/{{$project->id}}/edit" role="button">Edit Project</a>
+
 </div>
 
 @endsection
