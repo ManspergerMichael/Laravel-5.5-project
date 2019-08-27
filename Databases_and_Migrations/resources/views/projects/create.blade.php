@@ -15,21 +15,16 @@
         </div>
         <div class="form-group" >
             <label class="label" for="description">Description</label>
-            <textarea class="form-control" name="description">{{old('description')}}</textarea>
+            <textarea class="form-control" name="description">
+                {{old('description')}}
+            </textarea>
         </div>
         <div>
             <button type="submit">Create Project</button>
         </div>
     </form>
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+
+    @include('errors')
 
 @endsection
 

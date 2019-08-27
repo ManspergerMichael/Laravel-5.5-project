@@ -34,4 +34,6 @@
             <button class="btn btn-danger" type="submit">Delete Project</button>
         </div>
     </form>
+
+    @include('errors')
 @endsection
