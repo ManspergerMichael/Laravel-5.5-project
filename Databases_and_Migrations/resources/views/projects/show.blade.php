@@ -21,7 +21,7 @@
 
                         <div class="form-check">
                             <label class="form-check-label" for="completed">
-                                <input type="checkbox" class="form-check-input" name="completed" onChange="this.form.submit()" id="" value="checkedValue" {{$task->completed ? '<del>' : ''}}>
+                                <input type="checkbox" class="form-check-input" name="completed" onChange="this.form.submit()" id="" value="checkedValue" {{$task->completed ? 'checked' : 'unchecked'}}>
                                 {{ $task->description }}
                             </label>
                         </div>
@@ -38,7 +38,7 @@
 
     <div class="form-group">
     <label for="description">New Task</label>
-    <input type="text" class="form-control" name="description" id=""  placeholder="" >
+    <input type="text" class="form-control" name="description" id=""  placeholder="" required>
     </div>
     <button type="submit" class="btn btn-primary">Add Task</button>
 </form>
