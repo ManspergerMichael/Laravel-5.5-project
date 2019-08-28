@@ -1,5 +1,25 @@
 <?php
 
+use Illuminate\Filesystem\Filesystem;
+
+
+/*
+Laravel is a service container accessed with
+    app() or resolve() they do the exact same thing
+
+*/
+
+/*
+lab space
+To Reach something in the service container
+app(Filesystem::class)
+
+To bind something to the service container
+app()->bind('example', function(){
+
+})
+*/
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +43,9 @@ DELETE (DESTROY)
 
 
 Route::get('/', function () {
+    //dd(app(Filesystem::class));
+
+
     return view('welcome');
 });
 

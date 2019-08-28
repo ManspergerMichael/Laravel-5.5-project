@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Project;
 
 use Illuminate\Http\Request;
+use Illuminate\Filesystem\Filesystem; //.interact with files
 
 class ProjectsController extends Controller
 {
@@ -37,8 +38,18 @@ class ProjectsController extends Controller
     public function show(Project $project) //route model binding
     {
         //project = Project::findOrFail($id);
-        return view('Projects.show', compact('project'));
+        //return view('Projects.show', compact('project'));
     }
+
+    /*
+    service containers and route model binding
+    this function gets the file system without having to code all that in
+    public function show(Filesystem $file)
+    {
+        dd($file);
+    }
+    */
+
     public function edit(Project $project)
     {
         //$project = Project::findOrFail($id); no longer needed with route model binding
