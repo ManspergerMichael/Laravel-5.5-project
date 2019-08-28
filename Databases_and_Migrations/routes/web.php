@@ -1,7 +1,11 @@
 <?php
-
+//any code written here will run everytime a new page is loaded
 use Illuminate\Filesystem\Filesystem;
 
+app()->bind('example', function(){
+    return new \App\Example;
+
+});
 
 /*
 Laravel is a service container accessed with
@@ -15,9 +19,13 @@ To Reach something in the service container
 app(Filesystem::class)
 
 To bind something to the service container
+    this code binds the Example function to the service container
+    'example' is the key the function is the value
+    run this with app('example)
 app()->bind('example', function(){
+    return new \App\Example
 
-})
+});
 */
 
 /*
@@ -43,7 +51,7 @@ DELETE (DESTROY)
 
 
 Route::get('/', function () {
-    //dd(app(Filesystem::class));
+    dd(app('example'),app('example'));
 
 
     return view('welcome');
