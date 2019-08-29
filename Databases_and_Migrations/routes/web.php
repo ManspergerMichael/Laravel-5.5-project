@@ -51,7 +51,16 @@ DELETE (DESTROY)
 
 
 Route::get('/', function () {
+    /*
+    notes from service container
     dd(app('example'),app('example'));
+    */
+
+    /*
+    Notes from service provider
+
+     */
+    dd(app('foo'));
 
 
     return view('welcome');
