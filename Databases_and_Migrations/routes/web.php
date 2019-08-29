@@ -2,10 +2,12 @@
 //any code written here will run everytime a new page is loaded
 use Illuminate\Filesystem\Filesystem;
 
+/*
+examnple of binding a function to the service container
 app()->bind('example', function(){
     return new \App\Example;
 
-});
+}); */
 
 /*
 Laravel is a service container accessed with

@@ -3,9 +3,14 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Services\Twitter;
 
 class AppServiceProvider extends ServiceProvider
 {
+
+    /*
+        This service provider is used to register functions to the provider at startup and run functions at boot
+    */
     /**
      * Register any application services.
      *
@@ -14,8 +19,8 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //this binds and registers a function to the service provider
-        $this->app->singleton('foo',function () {
-            return 'bar';
+        $this->app->singleton(Twitter::class ,function () {
+            return new Twitter('api-key');
         });
     }
 
