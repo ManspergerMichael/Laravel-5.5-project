@@ -1,9 +1,12 @@
 <?php
 //any code written here will run everytime a new page is loaded
 use Illuminate\Filesystem\Filesystem;
+use App\Services\Twitter;
 
 /*
 examnple of binding a function to the service container
+this creates the function 'example' in the service container
+when app('example') is run it returns an instance of the Example class
 app()->bind('example', function(){
     return new \App\Example;
 
@@ -29,6 +32,12 @@ app()->bind('example', function(){
 
 });
 */
+//A singleton is a fuinction that runs once and returns the exact same output each time it is called
+//In this case the singleton creates a single instance of the example class. each time app('example') is run
+//the same instance is returned
+app()->singleton('example', function(){
+    return new \App\Example;
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -52,17 +61,28 @@ DELETE (DESTROY)
 */
 
 
-Route::get('/', function () {
+Route::get('/', function (Twitter $twitter) {
     /*
     notes from service container
+    //if singleton is used this will return two copies of the same instance
     dd(app('example'),app('example'));
     */
 
     /*
-    Notes from service provider
-
+    If the example function above is not registered, Laravel will look at this line and
+    find the App\Example class and return an instance of it.
+    dd(app('App\Example'));
      */
-    dd(app('foo'));
+
+    /*
+    Notes from service provider
+        dd(app('foo'));
+
+        //instance of the twitter class created
+        dd($twitter);
+     */
+
+     dd($twitter);
 
 
     return view('welcome');
