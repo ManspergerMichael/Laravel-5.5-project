@@ -20,10 +20,12 @@ class AppServiceProvider extends ServiceProvider
     {
         //this binds and registers a function to the service provider
         //a singleton is a function that runs once and returns that output each time the function is called
-        //This for example creates an instance of the Twitter class that holds the api key and this key will be accessable to the rest of the project
-        $this->app->singleton(Twitter::class ,function () {
-            return new Twitter('api-key');
+
+        $this->app->singleton('foo' ,function () {
+            return 'bar';
         });
+        //This for example creates an instance of the Twitter class that holds the api key
+        // and this key will be accessable to the rest of the project
     }
 
     /**

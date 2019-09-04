@@ -71,7 +71,7 @@ DELETE (DESTROY)
 */
 
 
-Route::get('/', function () {
+Route::get('/', function (Twitter $twitter) {
     /*
     Notes from service container lesson
     //if singleton is used this will return two copies of the same instance
@@ -84,7 +84,7 @@ Route::get('/', function () {
 
 
      */
-
+    dd($twitter);
     /*
     Notes from service provider
         dd(app('foo'));
