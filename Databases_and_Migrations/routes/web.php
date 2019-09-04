@@ -35,9 +35,19 @@ app()->bind('example', function(){
 //A singleton is a fuinction that runs once and returns the exact same output each time it is called
 //In this case the singleton creates a single instance of the example class. each time app('example') is run
 //the same instance is returned
-app()->singleton('example', function(){
+/*
+ app()->singleton('example', function(){
     return new \App\Example;
 });
+*/
+
+/*
+This is an example of using the service container to produce a api key
+app()->singleton('twitter', function() {
+    return new Twitter("123");
+});
+*/
+
 
 /*
 |--------------------------------------------------------------------------
@@ -61,17 +71,18 @@ DELETE (DESTROY)
 */
 
 
-Route::get('/', function (Twitter $twitter) {
+Route::get('/', function () {
     /*
-    notes from service container
+    Notes from service container lesson
     //if singleton is used this will return two copies of the same instance
     dd(app('example'),app('example'));
-    */
 
-    /*
+    AUTO REDSOLVE
     If the example function above is not registered, Laravel will look at this line and
     find the App\Example class and return an instance of it.
     dd(app('App\Example'));
+
+
      */
 
     /*
@@ -82,7 +93,8 @@ Route::get('/', function (Twitter $twitter) {
         dd($twitter);
      */
 
-     dd($twitter);
+    //dd(app('App\Example'));
+    //dd($twitter);
 
 
     return view('welcome');

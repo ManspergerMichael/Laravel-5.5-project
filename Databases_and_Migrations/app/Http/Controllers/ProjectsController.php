@@ -37,8 +37,10 @@ class ProjectsController extends Controller
 
     public function show(Project $project) //route model binding
     {
-        //project = Project::findOrFail($id);
-        //return view('Projects.show', compact('project'));
+        $twitter = app('twitter');
+        dd($twitter);
+        $project = Project::findOrFail($id);
+        return view('Projects.show', compact('project'));
     }
 
     /*
