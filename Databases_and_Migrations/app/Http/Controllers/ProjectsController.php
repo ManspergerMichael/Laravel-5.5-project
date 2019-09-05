@@ -37,8 +37,11 @@ class ProjectsController extends Controller
 
     public function show(Project $project) //route model binding
     {
+        /*
+        notes from service container lecture
         $twitter = app('twitter');
         dd($twitter);
+        */
         $project = Project::findOrFail($id);
         return view('Projects.show', compact('project'));
     }

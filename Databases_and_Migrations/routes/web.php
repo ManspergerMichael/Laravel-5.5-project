@@ -2,6 +2,7 @@
 //any code written here will run everytime a new page is loaded
 use Illuminate\Filesystem\Filesystem;
 use App\Services\Twitter;
+use App\Repositories\UserRepository;
 
 /*
 examnple of binding a function to the service container
@@ -71,7 +72,7 @@ DELETE (DESTROY)
 */
 
 
-Route::get('/', function (Twitter $twitter) {
+Route::get('/', function (UserRepository $users) {
     /*
     Notes from service container lesson
     //if singleton is used this will return two copies of the same instance
@@ -84,7 +85,7 @@ Route::get('/', function (Twitter $twitter) {
 
 
      */
-    dd($twitter);
+
     /*
     Notes from service provider
         dd(app('foo'));
@@ -96,7 +97,7 @@ Route::get('/', function (Twitter $twitter) {
     //dd(app('App\Example'));
     //dd($twitter);
 
-
+    dd($users);
     return view('welcome');
 });
 
