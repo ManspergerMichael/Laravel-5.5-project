@@ -42,7 +42,7 @@ class ProjectsController extends Controller
         $twitter = app('twitter');
         dd($twitter);
         */
-        $project = Project::findOrFail($id);
+        //$project = Project::findOrFail($id);
         return view('Projects.show', compact('project'));
     }
 
