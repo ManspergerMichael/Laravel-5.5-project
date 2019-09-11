@@ -138,3 +138,7 @@ get /projects/1/edit (edit)
 PATCH (UPDATE) /projects/1
 DELETE (DESTROY) /projects/1
  */
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
