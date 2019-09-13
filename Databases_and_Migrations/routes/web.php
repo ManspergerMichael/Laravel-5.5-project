@@ -95,7 +95,7 @@ Route::get('/', function (Twitter $twitter) {
      */
 
     //dd(app('App\Example'));
-    dd($twitter);
+    //dd($twitter);
     //dd($users);
     return view('welcome');
 });
