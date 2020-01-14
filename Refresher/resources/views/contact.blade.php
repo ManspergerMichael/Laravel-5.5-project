@@ -1,6 +1,5 @@
 @extends('layout')
-
 @section('content')
-    <h1>My first site</h1>
+<h1>Contact</h1>
 
 @endsection
