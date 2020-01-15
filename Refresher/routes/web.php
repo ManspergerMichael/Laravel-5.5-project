@@ -11,13 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//basic static pages
+Route::get('/', 'PagesController@home');
+Route::get('/about', 'PagesController@about');
+Route::get('/contact', 'PagesController@contact');
 
-Route::get('/contact', function () {
-    return view('contact');
-});
-Route::get('/about', function () {
-    return view('about');
-});
+/*
+Without controllers
+ Route::get('/', function () {
+    $tasks = [
+        'Eat',
+        'breath',
+        'code'
+    ];
+    return view('welcome',[
+        'tasks' => $tasks,
+        'title' => 'Fubar Coding'
+    ]);
+}); */
+
